@@ -1,0 +1,210 @@
+/* * Reset all elements
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* * HTML elements
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5em;
+  width: 800px;
+  margin: auto;
+}
+
+
+/* * Local selectors
+#container {
+  margin: 0px auto;
+  margin-top: 40px;
+  width: 100%;
+  height: 450px;
+  border: 10px #333 solid;
+  background-color: black;
+}
+
+#container #videoElement {
+  width: auto;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: black;
+}
+
+#control {
+  margin-top: 40px;
+}
+*/
+
+
+/* Reset all elements */
+/* Reset Default Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  background: url('../static/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔥 Stylish Navigation Bar */
+.navbar {
+  width: 100%;
+
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  left: 540px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Spacing between items */
+  align-items: center;
+
+}
+
+/* Navbar Brand (Title) */
+.navbar-brand {
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1.5px;
+}
+
+/* 🔹 Image Detection Button */
+.navbar .btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar .btn:hover {
+
+    background-color: darkgreen; /* Darker shade when hovered */
+
+}
+
+/* 🔥 Title Bar Styling */
+.title-bar {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-top: 80px; /* Adjusted for fixed navbar */
+}
+
+/* 🎯 Enhanced Title */
+.title-bar h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* 🔥 Video Container */
+#container {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 800px;
+  height: 550px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Video Stream */
+#videoElement {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: black;
+  border-radius: 10px;
+}
+
+/* Control Buttons */
+#control {
+  margin-top: 20px;
+}
+#control {
+    color: black;  /* Set all text inside #control to black */
+    font-weight: bold;
+    font-size: 18px;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    padding: 15px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .title-bar h1 {
+    font-size: 24px;
+  }
+
+  #container {
+    width: 95%;
+    height: 350px;
+  }
+}

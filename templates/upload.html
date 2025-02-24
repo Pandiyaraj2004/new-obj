@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Object Identifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image to Identify Objects</h1>
+
+        <!-- Image Upload Form -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" id="imageInput" accept="image/*" required>
+            <button type="submit">Upload & Search</button>
+        </form>
+
+        <!-- Image Preview -->
+        {% if image_name %}
+        <div class="preview">
+            <h2>Uploaded Image:</h2>
+            <img src="{{ url_for('static', filename='uploads/' + image_name) }}" id="previewImage" alt="Uploaded Image">
+        </div>
+        {% endif %}
+
+        <!-- Object Identification Result -->
+        {% if description %}
+        <div class="result">
+            <h2>Identified Objects:</h2>
+            <p>{{ description }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <br><br>
+    <a href="/">Go Back to Live Detection</a>
+
+    <!-- Image Preview JavaScript -->
+    <script>
+        document.getElementById("imageInput").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById("previewImage").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

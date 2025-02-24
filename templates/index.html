@@ -1,0 +1,60 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} {{ TITLE }} {% endblock %}
+
+{% block styles %}
+{{ super() }}
+
+<!-- Custom styles -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+{% endblock %}
+
+{% block content %}
+<!-- 🔹 Navigation Bar -->
+<nav class="navbar">
+
+
+    <!-- 🔹 Image Detection Button (Top Right) -->
+    <a href="/upload">
+        <button class="btn">Image Detection</button>
+    </a>
+</nav>
+
+<!-- 🔥 Title Bar -->
+<div class="title-bar">
+    <h1>{{ TITLE }}</h1>
+</div>
+
+<!-- 🎥 Video Stream -->
+<div id="container">
+    <img id="videoElement" src="{{ url_for('video_feed') }}" />
+
+    <!-- 🎛 Control Buttons -->
+    <form id="control">
+        Camera preview:
+        <a id="cam-preview"><button type="button">On/Off</button></a>
+        Flip horizontal:
+        <a id="flip-horizontal"><button type="button">On/Off</button></a>
+        Run detection model:
+        <a id="use-model"><button type="button">On/Off</button></a>
+        <br /><br />
+        Exposure:
+        <a id="exposure-down"><button type="button">-1</button></a>
+        <a id="exposure-up"><button type="button">+1</button></a>
+        Contrast:
+        <a id="contrast-down"><button type="button">-4</button></a>
+        <a id="contrast-up"><button type="button">+4</button></a>
+        <br /><br />
+        <a id="reset-cam"><button type="button">Reset Camera</button></a>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Imports -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Scripts -->
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+{{ super() }}
+{% endblock %}
